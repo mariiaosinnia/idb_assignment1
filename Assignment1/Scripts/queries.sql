@@ -29,7 +29,6 @@ statistics AS (
     FROM filtered_tickets
     GROUP BY title, genre
 )
-
 SELECT *
 FROM statistics
 ORDER BY avg_price DESC
