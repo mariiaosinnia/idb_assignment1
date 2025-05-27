@@ -20,7 +20,7 @@ filtered_tickets AS (
     SELECT * FROM ticket_info WHERE genre = 'Action'
 ),
 
-stats AS (
+statistics AS (
     SELECT
         title,
         genre,
@@ -28,10 +28,9 @@ stats AS (
         AVG(price) AS avg_price
     FROM filtered_tickets
     GROUP BY title, genre
-    HAVING COUNT(*) >= 1
 )
 
 SELECT *
-FROM stats
+FROM statistics
 ORDER BY avg_price DESC
 LIMIT 5;
